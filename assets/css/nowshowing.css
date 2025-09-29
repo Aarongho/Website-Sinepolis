@@ -1,0 +1,417 @@
+@media (min-width: 1401px) {
+  body {
+    font-family: 'Jomhuria', cursive;
+    background: linear-gradient(to bottom right, #d4f4d2, #ffffff);
+    margin: 0;
+    padding: 0;
+    color: #0b3d0b;
+  }
+
+  .now-showing-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+    gap: 1rem;
+  }
+
+  .now-showing-header h1 {
+    font-size: 6rem;
+    text-align: center;
+    font-family: 'Satoshi';
+  }
+
+  .now-showing-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .tab {
+    font-size: 3rem;
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    color: #0b3d0b;
+    transition: all 0.3s ease;
+    font-family: 'Jomhuria', cursive;
+  }
+
+  .tab.active {
+    background-color: #0b3d0b;
+    color: white;
+  }
+
+  .search-input {
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #0b3d0b;
+    width: 250px;
+    font-family: 'Jomhuria', cursive;
+  }
+
+  .sort-select {
+    font-size: 2rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #0b3d0b;
+    font-family: 'Jomhuria', cursive;
+  }
+
+  .movies-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    padding: 4rem 5%;
+    font-family: 'Satoshi';
+  }
+
+  .movie-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    font-family: 'Satoshi';
+  }
+
+  .movie-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .movie-card h2 {
+    font-size: 4rem;
+    margin: 1rem;
+    font-family: 'Jomhuria', cursive;
+  }
+
+  .movie-tags {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-family: 'Jomhuria', cursive;
+  }
+
+  .movie-tags span {
+    background-color: #d4f4d2;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+  }
+
+  .btn-ticket {
+    font-size: 2.8rem;
+    padding: 1rem 2.5rem;
+    margin: 2rem auto;
+    background-color: #0b3d0b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Jomhuria', cursive;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: fit-content;
+  }
+
+  .btn-ticket:hover {
+    background-color: #064d06;
+    color: #FFD700;
+    transform: translateY(-3px);
+  }
+
+  .show-tickets-button {
+    position: absolute;
+    top: 300px; 
+    right: 30px;
+    font-size: 3rem;
+    padding: 1rem 2rem;
+    background-color: #0b3d0b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    z-index: 9999;
+    cursor: pointer;
+    font-family: 'Jomhuria', cursive;
+  }
+
+  .show-tickets-button:hover {
+    background-color: #064d06;
+    color: #FFD700;
+  }
+
+  .ticket-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 61, 11, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .ticket-content {
+    background-color: white;
+    padding: 4rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    font-family: 'Jomhuria', cursive;
+    position: relative;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 3rem;
+    color: #0b3d0b;
+    cursor: pointer;
+    font-family: 'Jomhuria', cursive;
+    transition: color 0.2s ease;
+  }
+
+  .close-btn:hover {
+    color: #aa0000;
+  }
+
+  .ticket-empty-icon {
+    width: 150px;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .ticket-message {
+    font-size: 4rem;
+    color: #0b3d0b;
+    font-family: 'Jomhuria', cursive;
+  }
+  .movies-grid:empty,
+  .movies-grid.no-movies {
+    min-height: 40vh;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: none !important;
+    padding: 3rem 0;
+  }
+  .no-movies-message {
+    font-size: 2.5rem;
+    color: #666;
+    font-family: 'Jomhuria', cursive;
+    text-align: center;
+    width: 100%;
+  }
+  .footer-placeholder, footer.footer {
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+}
+
+@media (min-width: 600px) and (max-width: 1400px) {
+  .show-tickets-button {
+    position: absolute;
+    top: 100px;
+    right: 52px;
+    font-size: clamp(1.2rem, 2vw, 1.3rem);
+    padding: 0.8rem 2.2rem;
+    border-radius: 12px;
+    font-weight: bold;
+    background: #0b3d0b;
+    color: #fff;
+    min-width: 120px;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.07);
+    border: none;
+    display: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .show-tickets-button:hover {
+    background: #064d06;
+    color: #FFD700;
+  }
+  .now-showing-header {
+    margin-top: 0.5rem;
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+  .now-showing-header h1 {
+    font-size: clamp(2.3rem, 4vw, 3.2rem);
+    margin-bottom: 1.2rem;
+    font-family: 'Satoshi', Arial, sans-serif;
+    color: #0b3d0b;
+  }
+  .now-showing-controls {
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto 1.3rem auto;
+    position: relative;
+    z-index: 5;
+  }
+  .tab {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    font-weight: bold;
+    min-width: 105px;
+    box-sizing: border-box;
+    margin: 0;
+    background: #0b3d0b;
+    color: white;
+    border: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .tab.active, .tab:hover {
+    background: #FFD700;
+    color: #0b3d0b;
+  }
+  .search-input {
+    font-size: clamp(1rem, 1.5vw, 1.12rem);
+    width: clamp(120px, 15vw, 170px);
+    padding: 0.55rem 1rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin: 0 0.5rem;
+    border: 1.5px solid #0b3d0b;
+    color: #0b3d0b;
+    background: #fff;
+    transition: border 0.2s;
+  }
+  .search-input:focus {
+    outline: none;
+    border: 1.5px solid #FFD700;
+  }
+  .sort-select {
+    font-size: clamp(1rem, 1.4vw, 1.13rem);
+    padding: 0.55rem 1rem;
+    border-radius: 8px;
+    min-width: 100px;
+    box-sizing: border-box;
+    border: 1.5px solid #0b3d0b;
+    background: #fff;
+    color: #0b3d0b;
+    margin: 0 0.5rem;
+  }
+
+  .movies-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem;
+    padding: 2rem 5%;
+  }
+  .movie-card {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start;
+    align-items: center;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 350px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+  }
+  .movie-poster, .movie-card img {
+    width: 100%;
+    height: 100%;
+    max-height: 230px;
+    min-height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+    flex-shrink: 0;
+    border-radius: 0;
+  }
+  .movie-card h2 {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    margin: 0.8rem 0.2rem 0.5rem 0.2rem;
+    text-align: center;
+    width: 90%;
+    min-height: 2.4rem;
+    font-family: 'Jomhuria', cursive;
+  }
+  .movie-tags {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.07rem);
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .movie-tags span {
+    padding: 0.2rem 0.7rem;
+    border-radius: 5px;
+    background: #d4f4d2;
+  }
+  .btn-ticket {
+    font-size: clamp(1rem, 1.5vw, 1.13rem);
+    padding: 0.55rem 1rem;
+    border-radius: 8px;
+    margin: 1rem auto 1.2rem auto;
+    width: fit-content;
+    display: block;
+    background: #0b3d0b;
+    color: white;
+    border: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-ticket:hover {
+    background: #FFD700;
+    color: #0b3d0b;
+  }
+  .movies-grid:empty,
+  .movies-grid.no-movies {
+    min-height: 40vh;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: none !important;
+    padding: 3rem 0;
+  }
+  .no-movies-message {
+    font-size: 2.5rem;
+    color: #666;
+    font-family: 'Jomhuria', cursive;
+    text-align: center;
+    width: 100%;
+  }
+  .footer-placeholder, footer.footer {
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+
+}

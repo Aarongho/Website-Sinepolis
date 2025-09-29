@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thunderbolts Premiere</title>
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/promo-detail.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Jomhuria&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="navbar-placeholder"></div>
+
+  <main class="promo-detail">
+    <section class="promo-header">
+      <button class="back-button" onclick="history.back()">← Back</button>
+      <h1 class="promo-title">Thunderbolts Premiere</h1>
+    </section>
+
+    <section class="promo-main-content">
+      <div class="promo-image-wrapper">
+        <img src="../../src/images/thunderbolts.png" alt="Thunderbolts Premiere" class="promo-image" />
+        <div class="promo-code-badge" onclick="copyPromoCode(this)">Code: TBOLT2025</div>
+        <div class="promo-availability">Valid: June 8 - July 6</div>
+      </div>
+      <div class="promo-side-info">
+        <div class="countdown-box" id="countdown"></div>
+        <div class="terms-box">
+          <h2>Terms & Conditions</h2>
+          <ul>
+            <li>Valid only for Thunderbolts movie tickets</li>
+            <li>Exclusive early access screening</li>
+            <li>One-time use per customer</li>
+            <li>Only available at selected theaters</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="promo-description">
+      <div class="description-container">
+        <button class="dropdown-toggle">
+          Show Description <span class="arrow">▼</span>
+        </button>
+        <div class="description-card">
+          <p>
+            Get early access to the Thunderbolts premiere and experience the action before anyone else! With this exclusive offer, fans can enjoy reserved seating, limited edition merchandise, and a chance to meet special guests. Book now and be among the first to witness the epic showdown on the big screen.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer-placeholder"></div>
+
+  <script src="../js/navbar.js"></script>
+  <script src="../js/footer.js"></script>
+  <script src="../js/dropdown.js"></script>
+  <script src="../js/countdown.js"></script>
+</body>
+</html>

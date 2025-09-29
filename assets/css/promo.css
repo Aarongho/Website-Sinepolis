@@ -1,0 +1,255 @@
+
+:root {
+  --color-dark-green: #0b3d0b;
+  --color-light-green: #d4f4d2;
+  --color-yellow: #ffd700;
+  --color-dark-gray: #222;
+  --color-text: #333;
+  --font-body: 'Jomhuria', cursive;
+  --font-header: 'Satoshi', sans-serif;
+  --jitter-color: #ffb347; 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-light-green);
+  color: var(--color-dark-gray);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.bg-anim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-light-green);
+  z-index: -2;
+}
+
+.promo-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 1rem;
+  margin-top: 180px; 
+  position: relative;
+  z-index: 1;
+}
+
+.promo-header {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.page-title {
+  font-family: 'Satoshi'; 
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--color-dark-green);
+}
+
+.promo-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.promo-tabs .tab {
+  font-family: var(--font-body); 
+  background-color: var(--color-dark-green);
+  color: #fff;
+  font-size: 2.2rem; 
+  padding: 1.2rem 2.4rem; 
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.promo-tabs .tab:hover {
+  transform: scale(1.05);
+}
+
+.promo-tabs .tab.active {
+  background-color: var(--color-yellow);
+  color: var(--color-dark-green);
+}
+
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(900px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.promo-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--color-dark-green);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.promo-image {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.promo-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+  transform: translate(-5%, -5%);
+}
+
+.promo-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.promo-title {
+  font-family: var(--font-body); 
+  font-size: 4.5rem;
+  color: var(--color-dark-green);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.promo-description {
+  font-family: var(--font-body); 
+  font-size: 3rem;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.promo-code {
+  font-family: var(--font-body); 
+  background-color: var(--color-yellow);
+  color: var(--color-dark-green);
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  font-size: 3.3rem;
+  text-align: center;
+}
+
+
+.jitter-left,
+.jitter-right {
+  position: fixed;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  background-color: var(--jitter-color);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: pulse 2s infinite ease-in-out;
+  z-index: 0; 
+}
+
+.jitter-left {
+  left: 20%;
+  top:50%
+}
+
+.jitter-right {
+  right: 20%;
+  top:40%;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(0.7);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 1200px) {
+  .promo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .promo-tabs .tab {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+  }
+  .promo-title {
+    font-size: 3rem;
+  }
+  .promo-description {
+    font-size: 2rem;
+  }
+  .promo-code {
+    font-size: 2.5rem;
+  }
+  .promo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+  .promo-tabs {
+    gap: 0.5rem;
+  }
+  .promo-tabs .tab {
+    padding: 0.4rem 0.8rem;
+    font-size: 1.5rem;
+  }
+  .promo-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}

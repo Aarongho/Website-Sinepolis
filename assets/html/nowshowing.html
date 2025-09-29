@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Now Showing - Sinepolis</title>
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/nowshowing.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Jomhuria&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="navbar-placeholder"></div>
+  <button class="show-tickets-button">Show Tickets</button>
+  <header class="now-showing-header">
+    <h1>Film & Movies In Sinepolis</h1>
+    <div class="now-showing-controls">
+      <button class="tab active" data-category="all">All</button>
+      <button class="tab" data-category="now">Now Showing</button>
+      <button class="tab" data-category="soon">Coming Soon</button>
+      <input type="text" class="search-input" placeholder="Search movies..." />
+      <select class="sort-select">
+        <option value="az">Sort A-Z</option>
+        <option value="za">Sort Z-A</option>
+      </select>
+    </div>
+  </header>
+  <main class="movies-grid">
+    <div class="movie-card" data-category="now">
+      <img src="../../src/images/FD.png" alt="Final Destination: Bloodlines" class="movie-poster">
+      <h2>Final Destination: Bloodlines</h2>
+      <div class="movie-tags"><span>Horror</span><span>1h 50m</span></div>
+      <a href="movie1.html" class="btn-ticket">View Info</a>
+    </div>
+    <div class="movie-card" data-category="now">
+      <img src="../../src/images/ENDGAME.png" alt="Avengers: End Game" class="movie-poster">
+      <h2>Avengers: End Game</h2>
+      <div class="movie-tags"><span>Action</span><span>3h 2m</span></div>
+      <a href="movie2.html" class="btn-ticket">View Info</a>
+    </div>
+    <div class="movie-card" data-category="now">
+      <img src="../../src/images/NWH.png" alt="Spider-Man: No Way Home" class="movie-poster">
+      <h2>Spider-Man: No Way Home</h2>
+      <div class="movie-tags"><span>Action</span><span>2h 28m</span></div>
+      <a href="movie3.html" class="btn-ticket">View Info</a>
+    </div>
+    <div class="movie-card" data-category="now">
+      <img src="../../src/images/CON.png" alt="The Conjuring" class="movie-poster">
+      <h2>The Conjuring</h2>
+      <div class="movie-tags"><span>Horror</span><span>1h 52m</span></div>
+      <a href="movie4.html" class="btn-ticket">View Info</a>
+    </div>
+    <div class="movie-card" data-category="now">
+      <img src="../../src/images/AVATAR.png" alt="Avatar" class="movie-poster">
+      <h2>Avatar</h2>
+      <div class="movie-tags"><span>Fantasy</span><span>2h 42m</span></div>
+      <a href="movie5.html" class="btn-ticket">View Info</a>
+    </div>
+    <div class="movie-card" data-category="now">
+      <img src="../../src/images/Squid.png" alt="Squid Game: Season 3" class="movie-poster">
+      <h2>Squid Game: Season 3</h2>
+      <div class="movie-tags"><span>Thriller</span><span>1h 50m</span></div>
+      <a href="movie6.html" class="btn-ticket">View Info</a>
+    </div>
+    <div class="movie-card" data-category="soon">
+      <img src="../../src/images/CON2.png" alt="The Conjuring: Last Rites" class="movie-poster">
+      <h2>The Conjuring: Last Rites</h2>
+      <div class="movie-tags"><span>Horror</span><span>Coming Soon</span></div>
+      <a href="movie7.html" class="btn-ticket">View Info</a>
+    </div>
+    <div class="movie-card" data-category="soon">
+      <img src="../../src/images/ADD.png" alt="Avengers: Doomsday" class="movie-poster">
+      <h2>Avengers: Doomsday</h2>
+      <div class="movie-tags"><span>Action</span><span>Coming Soon</span></div>
+      <a href="movie8.html" class="btn-ticket">View Info</a>
+    </div>
+  </main>
+    <div class="ticket-popup">
+        <div class="ticket-content">
+            <button class="close-btn">&times;</button>
+            <img src="../../src/images/sad-popcorn.png" alt="Sad Popcorn" class="ticket-empty-icon">
+            <p class="ticket-message">Sorry, you haven't bought any tickets.</p>
+        </div>
+    </div>
+  <div class="footer-placeholder"></div>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/footer.js"></script>
+  <script src="../js/nowshowing.js"></script>
+</body>
+</html>

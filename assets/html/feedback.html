@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sinepolis - Feedback</title>
+
+  <link rel="stylesheet" href="../css/home.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/feedback.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jomhuria&family=Satoshi:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+</head>
+<body>
+  <div class="navbar-placeholder"></div>
+
+  <section class="title-section">
+    <h1 class="feedback-title">Give Us Your Feedback</h1>
+  </section>
+
+  <section class="feedback-section">
+    <div class="feedback-container">
+      <div class="feedback-header"></div>
+
+      <div class="feedback-body">
+        <div class="col-left">
+          <label for="full-name" class="lbl">Full Name</label>
+          <input
+            type="text"
+            id="full-name"
+            class="inp"
+            placeholder="Enter Your Full Name"
+          />
+
+          <label for="email" class="lbl">Email</label>
+          <input
+            type="text"
+            id="email"
+            class="inp"
+            placeholder="Enter Your Email Address"
+          />
+
+          <label for="phone" class="lbl">No Telp.</label>
+          <input
+            type="text"
+            id="phone"
+            class="inp"
+            placeholder="Enter Your Phone Number"
+          />
+
+          <label class="lbl">Gender</label>
+          <div class="gender-group">
+            <input type="radio" id="gender-male" name="gender" value="Male" />
+            <label for="gender-male" class="radio-label">Male</label>
+            <input
+              type="radio"
+              id="gender-female"
+              name="gender"
+              value="Female"
+            />
+            <label for="gender-female" class="radio-label">Female</label>
+          </div>
+        </div>
+
+        <div class="divider-vert"></div>
+
+        <div class="col-right">
+          <label for="location" class="lbl">Location</label>
+          <select id="location" class="sel">
+            <option value="">Default</option>
+            <option value="Aceh">Aceh</option>
+            <option value="Bali">Bali</option>
+            <option value="Jakarta">Jakarta</option>
+            <option value="Tangerang">Tangerang</option>
+            <option value="Pekanbaru">Pekanbaru</option>
+            <option value="Kalimantan">Kalimantan</option>
+          </select>
+
+          <label for="date" class="lbl">Date</label>
+          <input type="date" id="date" class="inp-date" />
+
+          <label for="visit-count" class="lbl">Visit Count</label>
+          <input
+            type="number"
+            id="visit-count"
+            class="inp"
+            placeholder="Enter Your Number of Visits"
+            min="1"
+          />
+
+          <label class="lbl">What’s Need Improvement?</label>
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="imp-price"
+              name="improvement"
+              value="Price"
+            />
+            <label for="imp-price" class="cb-label">Price</label><br />
+
+            <input
+              type="checkbox"
+              id="imp-service"
+              name="improvement"
+              value="Service"
+            />
+            <label for="imp-service" class="cb-label">Service</label><br />
+
+            <input
+              type="checkbox"
+              id="imp-food"
+              name="improvement"
+              value="Foods & Beverages"
+            />
+            <label for="imp-food" class="cb-label">Foods & Beverages</label><br />
+
+            <input
+              type="checkbox"
+              id="imp-furniture"
+              name="improvement"
+              value="Furnitures (Cinema Seats, Screens, etc)"
+            />
+            <label for="imp-furniture" class="cb-label"
+              >Furnitures (Cinema Seats, Screens, etc)</label
+            ><br />
+          </div>
+        </div>
+      </div>
+
+      <div class="feedback-fullwidth">
+        <label for="feedback" class="lbl">Feedbacks</label>
+        <textarea
+          id="feedback"
+          class="txtarea-full"
+          placeholder="Enter Your Feedbacks"
+        ></textarea>
+      </div>
+
+      <div class="rating-section">
+        <label class="lbl">Rating</label>
+        <div class="stars-row">
+          <span class="star" data-value="1">&#9734;</span>
+          <span class="star" data-value="2">&#9734;</span>
+          <span class="star" data-value="3">&#9734;</span>
+          <span class="star" data-value="4">&#9734;</span>
+          <span class="star" data-value="5">&#9734;</span>
+          <span class="star" data-value="6">&#9734;</span>
+          <span class="star" data-value="7">&#9734;</span>
+          <span class="star" data-value="8">&#9734;</span>
+          <span class="star" data-value="9">&#9734;</span>
+          <span class="star" data-value="10">&#9734;</span>
+        </div>
+      </div>
+
+      <div class="submit-section">
+        <button type="button" id="submit-btn" class="btn-submit">
+          Submit Form
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div id="validation-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div class="modal-header">
+        <h2>Oops!</h2>
+        <img
+          src="../../src/images/feed.png"
+          alt="Feedback Icon"
+          class="modal-img"
+        />
+      </div>
+
+      <div class="modal-body">
+        <p id="modal-message"></p>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-ok-btn">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="success-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div class="modal-header">
+        <h2>Thank You!</h2>
+        <img
+          src="../../src/images/thanks.png"
+          alt="Thank You Icon"
+          class="modal-img"
+        />
+      </div>
+
+      <div class="modal-body">
+        <p>thank you for your feedbacks</p>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-ok-btn">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-placeholder"></div>
+
+  <script src="../js/navbar.js"></script>
+  <script src="../js/feedback.js"></script>
+  <script src="../js/footer.js"></script>
+</body>
+</html>

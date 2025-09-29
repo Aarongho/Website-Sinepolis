@@ -1,0 +1,243 @@
+body {
+  font-family: 'Jomhuria', cursive;
+  background: linear-gradient(to bottom right, #d4f4d2, #ffffff);
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
+.promo-header {
+  padding: 2rem;
+  text-align: center;
+  margin-top: 100px;
+  position: relative;
+}
+
+.promo-title {
+  font-size: 9rem;
+  font-family: 'Jomhuria', cursive;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.back-button {
+  position: absolute;
+  top: 2rem;
+  left: 1rem;
+  font-size: 3rem;
+  padding: 0.5rem 1rem;
+  background-color: #0b3d0b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Jomhuria', cursive;
+  z-index: 10;
+}
+
+.promo-main-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 2rem;
+  max-width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.promo-image-wrapper {
+  flex: 0 0 50%;
+  position: relative;
+}
+
+.promo-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+}
+
+.promo-code-badge, .promo-availability {
+  position: absolute;
+  background-color: #0b3d0b;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 3rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  font-family: 'Jomhuria', cursive;
+}
+
+.promo-code-badge {
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+}
+
+.promo-availability {
+  bottom: 10px;
+  right: 10px;
+}
+
+.promo-side-info {
+  flex: 0 0 40%;
+  min-width: 300px;
+}
+
+.countdown-box {
+  background-color: #d4f4d2;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #0b3d0b;
+  font-family: 'Jomhuria', cursive;
+}
+
+.terms-box {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  font-size: 3rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: 'Jomhuria', cursive;
+}
+
+.terms-box ul {
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.terms-box li {
+  margin-bottom: 0.5rem;
+}
+
+.promo-description {
+  margin: 3rem auto;
+  max-width: 80%;
+  padding: 2rem;
+  flex: 0 0 100%;
+}
+
+.description-container {
+  background-color: #0b3d0b;
+  border-radius: 10px;
+  padding: 2rem;
+  font-family: 'Jomhuria', cursive;
+}
+
+.dropdown-toggle {
+  background-color: transparent;
+  color: white;
+  font-size: 3rem;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-family: 'Jomhuria', cursive;
+}
+
+.arrow {
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+.description-card {
+  display: none;
+  margin-top: 1rem;
+  background-color: #d4f4d2;
+  padding: 2rem;
+  border-radius: 8px;
+  font-family: 'Jomhuria', cursive;
+}
+
+.description-card p {
+  font-size: 3rem;
+  line-height: 1.6;
+  color: black;
+}
+
+.copied-label {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+  background-color: #FFD700;
+  color: #0b3d0b;
+  font-size: 2.5rem;
+  font-family: 'Jomhuria', cursive;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+@media (min-width: 600px) and (max-width: 1400px) {
+  .promo-main-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .promo-image-wrapper {
+    width: 100%;
+    max-width: 98vw;
+    margin-bottom: 1rem;
+    flex: unset;
+    order: 1;
+    display: flex;
+    justify-content: center;
+  }
+  .promo-image {
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    min-height: 210px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+  .promo-side-info {
+    width: 100%;
+    max-width: 720px;
+    min-width: 0;
+    margin: 0 auto;
+    flex: unset;
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .promo-description {
+    margin: 2rem auto;
+    max-width: 98vw;
+    padding: 1.4rem;
+    order: 3;
+  }
+  .back-button {
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    font-size: 3rem;
+    padding: 0.5rem 1rem;
+    background-color: #0b3d0b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Jomhuria', cursive;
+    z-index: 10;
+  }
+
+}

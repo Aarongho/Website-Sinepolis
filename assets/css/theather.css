@@ -1,0 +1,357 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #eafaf1;
+  font-family: 'Jomhuria', cursive;
+  color: #333333;
+}
+
+.gap {
+  height: 60px;
+}
+.gap + .gap {
+  height: 60px;
+}
+.gap-small {
+  height: 30px;
+}
+
+.main-title {
+  font-family: 'Satoshi';
+  text-align: center;
+  color: #0b4923; 
+  font-size: 6rem; 
+  line-height: 1.1;
+  margin-top: 3rem;
+}
+
+.theaters-section {
+  flex: 1;
+  padding: 20px 40px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.controls select,
+.controls input[type="text"] {
+  font-family: 'Jomhuria', cursive;
+  font-size: 3.3rem;
+  padding: 24px 36px;
+  border: 2px solid #2e8b57;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #333333;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.controls select:focus,
+.controls input[type="text"]:focus {
+  border-color: #0b4923;
+}
+
+#theaterContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  overflow-y: auto;
+  max-height: 70vh;
+  padding-right: 8px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.card img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+
+.card h3.theater-name {
+  padding: 20px;
+  text-align: center;
+  font-size: 6rem;
+  color: #0b4923;
+  background-color: #f2fff3;
+}
+
+.card-detail {
+  display: none;
+}
+
+#popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+#popup:not(.hidden) {
+  display: flex;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  max-width: 1000px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  color: #f0f0f0;
+}
+
+#closePopup {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 7rem;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 10;
+  line-height: 1;
+}
+
+.popup-header {
+  background-color: #111111;
+  padding: 24px 32px;
+  text-align: center;
+}
+.popup-header .popup-title {
+  font-family: 'Jomhuria';
+  font-size: 5rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.popup-image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 450px;
+}
+
+.popup-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.popup-image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+  pointer-events: none;
+}
+
+.popup-body {
+  width: 100%;
+  background-color: #1e1e1e;
+  padding: 48px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  row-gap: 20px;
+}
+
+.popup-body .label-title {
+  font-size: 3.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.popup-body .info {
+  font-size: 2.8rem;
+  line-height: 1.4;
+  color: #cccccc;
+  display: flex;
+  align-items: center;
+  column-gap: 14px;
+}
+
+.popup-body .info .info-icon {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.popup-body .info .label {
+  font-weight: 600;
+  font-size: 3.2rem;
+  color: #ffffff;
+  min-width: 220px;
+}
+
+.popup-body .info-text {
+  display: inline-block;
+  font-size: 2.8rem;
+  color: #cccccc;
+}
+
+.popup-body .info a {
+  color: #1abc9c;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 2.8rem;
+}
+
+.popup-body .info a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+  .popup-content {
+    max-width: 90vw;
+    z-index: 1000;
+    margin-top: 100px;
+  }
+  #closePopup {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 7rem;
+    color: #f0f0f0;
+    cursor: pointer;
+    z-index: 10;
+    line-height: 1;
+  }
+
+  .popup-header {
+    padding: 18px 24px;
+  }
+  .popup-header .popup-title {
+    font-size: 4rem;
+  }
+  .popup-image-container {
+    height: 350px;
+  }
+  .popup-body {
+    padding: 32px 40px;
+  }
+  .popup-body .label-title {
+    font-size: 3rem;
+  }
+  .popup-body .info {
+    font-size: 2.4rem;
+  }
+  .popup-body .info .info-icon {
+    width: 38px;
+    height: 38px;
+  }
+  .popup-body .info .label {
+    font-size: 2.6rem;
+    min-width: 180px;
+  }
+  .popup-body .info-text,
+  .popup-body .info a {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .popup-content {
+    max-width: 95vw;
+    margin-top: 100px;
+    z-index: 1000;
+  }
+  #closePopup {
+    font-size: 4rem;
+    top: 8px;
+    right: 12px;
+  }
+  .popup-header {
+    padding: 16px 20px;
+  }
+  .popup-header .popup-title {
+    font-size: 3rem;
+  }
+  .popup-image-container {
+    height: 250px;
+  }
+  .popup-body {
+    padding: 20px 24px;
+  }
+  .popup-body .label-title {
+    font-size: 2.4rem;
+  }
+  .popup-body .info {
+    font-size: 2.2rem;
+  }
+  .popup-body .info .info-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .popup-body .info .label {
+    font-size: 2.4rem;
+    min-width: 140px;
+  }
+  .popup-body .info-text,
+  .popup-body .info a {
+    font-size: 2.2rem;
+  }
+}
+
+
+@media (min-width: 600px) and (max-width: 1200px) {
+  .card {
+    font-size: 1.8rem;
+    max-width: 280px;
+  }
+  .card h3.theater-name {
+    font-size: 2.5rem;
+    padding: 10px;
+  }
+  .card img {
+    height: 180px;
+  }
+  .main-title {
+    font-size: 3.3rem;
+  }
+  .controls select,
+  .controls input[type="text"] {
+    font-size: 1.8rem;
+    padding: 14px 18px;
+  }
+}

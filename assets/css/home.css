@@ -1,0 +1,317 @@
+.banner-section {
+  position: relative;
+  margin-top: 80px;
+}
+
+.banner-img {
+  width: 100%;
+  display: block;
+}
+
+.banner-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 10rem;
+  text-align: center;
+}
+
+.experience-text p {
+  text-align: center;
+  font-size: 5rem;
+  margin: 2rem auto;
+  max-width: 80%;
+}
+
+.choose-container {
+  text-align: center;
+  margin: 2rem 0;
+  margin-top: 10px;
+}
+
+.choose-btn {
+  background-color: #0b3d0b;
+  color: white;
+  padding: 3rem 4rem;
+  border: none;
+  white-space: nowrap;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 3.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.choose-btn a {
+  font-size: 7rem;
+}
+
+.choose-btn:hover {
+  background-color: #074007;
+  color: #FFD700;
+}
+
+.section-divider {
+  border: 1px solid #0b3d0b;
+  margin: 2rem 0;
+}
+
+
+.section-title.large {
+  font-size: 10rem;
+  text-align: center;
+}
+
+.carousel-section {
+  text-align: center;
+  font-size: 5rem;
+}
+
+.carousel {
+  overflow: hidden;
+  max-width: 90%;
+  margin: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 25px;
+}
+
+.carousel-slide a {
+  flex: 0 0 calc(100% / 3);
+  max-width: calc(100% / 3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slide a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel-img:last-child {
+  margin-right: 0;
+}
+
+.carousel-btn {
+  background-color: #0b3d0b;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  user-select: none;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background-color: #074007;
+  color: #FFD700;
+}
+
+.carousel-btn.left {
+  left: 0px;
+}
+
+.carousel-btn.right {
+  right: 0;
+}
+
+
+
+#location-map {
+  width: 100rem;
+  height: 50rem;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: opacity 1s ease;
+}
+
+
+.location-title {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+.location-section {
+  display: block;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.partners-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 0;
+  gap: 2rem;
+}
+
+.ratings,
+.choose-container,
+.partner-logos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertical-divider {
+  width: 2px;
+  height: 300px;
+  background-color: #0b3d0b;
+}
+
+.ratings h2 {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.ratings .stars {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.star-icon {
+  height: 70px;
+  margin: 0 2px;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.partner-logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.partner-img {
+  height: 200px;
+  width: 250px;
+  margin-bottom: 100px;
+  border-radius: 10px;
+}
+
+.partner-logos h2 {
+  font-size: 5rem;
+}
+
+@media (min-width: 600px) and (max-width: 1400px) {
+  .banner-section {
+    margin-top: 0px;
+  }
+  .banner-text {
+    font-size: clamp(2.5rem, 7vw, 7rem);
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .experience-text p {
+    font-size: clamp(1.5rem, 4vw, 4rem);
+    margin: clamp(1rem, 3vw, 2rem) auto;
+    max-width: 90%;
+  }
+  .choose-container {
+    margin: clamp(1rem, 3vw, 2rem) 0;
+    margin-top: clamp(7px, 1.5vw, 18px);
+  }
+  .choose-btn {
+    padding: clamp(1.3rem, 4vw, 2.5rem) clamp(2rem, 5vw, 3rem);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    border-radius: 10px;
+  }
+  .choose-btn a {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+  }
+  .section-title.large {
+    font-size: clamp(3rem, 8vw, 7rem);
+  }
+  .carousel-section {
+    font-size: clamp(1.7rem, 5vw, 4rem);
+  }
+  .carousel {
+    max-width: 97%;
+    gap: clamp(5px, 2vw, 20px);
+  }
+  .carousel-slide {
+    gap: clamp(7px, 2vw, 20px);
+  }
+  .carousel-slide a {
+    max-width: calc(100% / 3);
+  }
+  .carousel-slide a img {
+    border-radius: 10px;
+  }
+  .carousel-btn {
+    font-size: clamp(1rem, 2vw, 1.7rem);
+    padding: clamp(0.3rem, 1vw, 0.7rem) clamp(0.6rem, 2vw, 1.2rem);
+    border-radius: 10px;
+  }
+  #location-map {
+    width: clamp(37rem, 70vw, 80rem);
+    height: clamp(20rem, 35vw, 40rem);
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+  }
+  .location-title {
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    margin-bottom: clamp(1rem, 3vw, 2rem);
+  }
+  .location-section {
+    max-width: 100%;
+    margin-bottom: 50px;
+  }
+  .partners-section {
+    gap: clamp(0.7rem, 2vw, 2rem);
+    padding: clamp(0.8rem, 2vw, 1.5rem) 0;
+  }
+  .partner-logo-row {
+    gap: clamp(0.7rem, 2vw, 2rem);
+  }
+  .partner-img {
+    height: clamp(60px, 15vw, 120px);
+    width: clamp(80px, 18vw, 150px);
+    margin-bottom: clamp(30px, 8vw, 60px);
+  }
+  .partner-logos h2 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+  }
+  .ratings h2 {
+    font-size: clamp(2.1rem, 5vw, 3.5rem);
+    margin-bottom: clamp(0.5rem, 2vw, 1.3rem);
+  }
+  .star-icon {
+    height: clamp(24px, 5vw, 40px);
+    margin: 0 clamp(0.5px, 0.7vw, 4px);
+  }
+  .vertical-divider {
+    width: clamp(1px, 0.5vw, 2px);
+    height: clamp(80px, 20vw, 180px);
+    background-color: #0b3d0b;
+  }
+}

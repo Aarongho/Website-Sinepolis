@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sinepolis</title>
+  <link rel="stylesheet" href="../css/home.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Jomhuria&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar-placeholder"></div>
+  <section class="banner-section" id="home">
+    <img src="../../src/images/banner.png" alt="Banner" class="banner-img" />
+    <div class="banner-text">
+      <h1>Welcome to Sinepolis</h1>
+    </div>
+  </section>
+
+  <section class="experience-text">
+    <p>Experience the Magic at Sinepolis! With 5 Cinemas and Over 25+ Screens Nationwide, Your Perfect Movie Moment Awaits!</p>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section class="partners-section">
+    <div class="ratings">
+      <h2>Ratings Rated by Users:</h2>
+      <div class="stars">
+        <img src="../../src/images/star.png" class="star-icon" alt="Star" />
+        <img src="../../src/images/star.png" class="star-icon" alt="Star" />
+        <img src="../../src/images/star.png" class="star-icon" alt="Star" />
+        <img src="../../src/images/star.png" class="star-icon" alt="Star" />
+        <img src="../../src/images/star.png" class="star-icon" alt="Star" />
+      </div>
+    </div>
+
+    <div class="vertical-divider"></div>
+
+    <div class="choose-container">
+      <a href="nowshowing.html" class="choose-btn">Choose Movie</a>
+    </div>
+
+    <div class="vertical-divider"></div>
+
+    <div class="partner-logos">
+      <h2>Supported by:</h2>
+      <div class="partner-logo-row">
+        <img src="../../src/images/dolby.png" alt="Dolby Logo" class="partner-img" />
+        <img src="../../src/images/imax.png" alt="IMAX Logo" class="partner-img" />
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section class="carousel-section" id="promo">
+    <h2>Ongoing Promotions</h2>
+    <div class="carousel">
+      <button class="carousel-btn left" onclick="prevSlide()">&#10094;</button>
+      <div class="carousel-slide">
+      <a href="promo-buy1get1.html"><img src="../../src/images/buy1get1.jpg" class="carousel-img" alt="Promo 1" /></a>
+      <a href="promo-freepopcorn.html"><img src="../../src/images/free-popcorn.jpg" class="carousel-img" alt="Promo 2" /></a>
+      <a href="promo-vip.html"><img src="../../src/images/vip-promo.jpg" class="carousel-img" alt="Promo 3" /></a>
+      <a href="promo-imax.html"><img src="../../src/images/imaxdiscount.png" class="carousel-img" alt="Promo 4" /></a>
+      <a href="promo-giveaway.html"><img src="../../src/images/giveaway.png" class="carousel-img" alt="Promo 5" /></a>
+      <a href="promo-thunderbolts.html"><img src="../../src/images/thunderbolts.png" class="carousel-img" alt="Promo 6" /></a>
+      </div>
+      <button class="carousel-btn right" onclick="nextSlide()">&#10095;</button>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section class="location-section" id="theaters">
+    <h2 class="section-title large">Sinepolis Locations in Indonesia</h2>
+    <a href="theather.html">
+      <img id="location-map" src="../../src/images/indonesia-map.png" class="location-map large-center" alt="Indonesia Map" />
+    </a>
+  </section>
+  <div class="footer-placeholder"></div>
+  
+
+  <script src="../js/script.js"></script>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/footer.js"></script>
+</body>
+</html>
